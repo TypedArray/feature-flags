@@ -32,8 +32,8 @@ export function DevelopOptions({
   useEffect(() => {
     if (enabled) {
       const gui = new dat.GUI({ autoPlace: false, closeOnTop: true });
-      gui.add({ reset }, 'reset').name('还原设置');
-      const featureFlagsFolder = gui.addFolder('功能开关');
+      gui.add({ reset }, 'reset').name('Restore Settings');
+      const featureFlagsFolder = gui.addFolder('Feature Flags');
       featureFlagsFolder.open();
       const target = {
         ...initialFeatureFlagsRef.current,
