@@ -40,6 +40,14 @@ export const useStore = create<FeatureFlagsStore>(
 /**
  * 获取功能开关值
  */
+export function getFeatureFlag(key: string) {
+  const state = useStore.getState();
+  return state.enabled && state.featureFlags[key];
+}
+
+/**
+ * 获取功能开关值
+ */
 export function useFeatureFlag(key: string) {
   return useStore((state) => state.enabled && state.featureFlags[key]);
 }
